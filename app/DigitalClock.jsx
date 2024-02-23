@@ -1,8 +1,18 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function DigitalClock() {
   const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    // Check if it's the first load
+    if (!localStorage.getItem("pageLoaded")) {
+      // Set a flag to indicate the page has been loaded
+      localStorage.setItem("pageLoaded", "true");
+      // Refresh the page
+      location.reload();
+    }
+  }, []);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
