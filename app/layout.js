@@ -1,7 +1,15 @@
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+});
+
+const myFont = localFont({
+  src: "../public/fonts/RobotoMono-VariableFont_wght.woff2",
+});
 
 export const metadata = {
   title: "Clock",
@@ -12,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="flex justify-center h-full items-center">
       <link rel="icon" href="/favicon.ico" sizes="any" />
-      <body className={inter.className}>{children}</body>
+      <body className={`${myFont.className}`}>{children}</body>
     </html>
   );
 }

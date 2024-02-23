@@ -5,23 +5,6 @@ export default function DigitalClock({ timeNow }) {
   const [time, setTime] = useState(new Date(timeNow));
 
   useEffect(() => {
-    let intervalId;
-    // Check if it's the first load
-    if (!localStorage.getItem("pageLoaded")) {
-      // Set a flag to indicate the page has been loaded
-      localStorage.setItem("pageLoaded", "true");
-
-      intervalId = setTimeout(function () {
-        location.reload();
-      }, 3000);
-    }
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
-
-  useEffect(() => {
     const intervalId = setInterval(() => {
       setTime(new Date());
     }, 1000);
@@ -80,11 +63,11 @@ export default function DigitalClock({ timeNow }) {
     <>
       <div>
         <span
-          className={`font-my1Font text-slate-100 font-black  tracking-tight text-biggest`}
+          className={` text-slate-100 font-black tracking-tight text-biggest`}
         >
           {formatTime()}
         </span>
-        <span className="font-my1Font pl-8 text-9xl text-red-400 tracking-normal">
+        <span className=" pl-8 text-9xl text-red-400 tracking-normal">
           {formatSeconds()}
         </span>
       </div>
@@ -94,7 +77,7 @@ export default function DigitalClock({ timeNow }) {
       <br />
 
       <div
-        className={`font-my1Font text-yellow-400 font-bold text-center shadow-black text-7xl tracking-tighter`}
+        className={` text-yellow-400 font-bold text-center shadow-black text-7xl`}
       >
         <span>{formatDate()}</span>
       </div>
