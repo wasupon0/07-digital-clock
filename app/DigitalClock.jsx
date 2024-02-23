@@ -1,17 +1,24 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function DigitalClock() {
-  const [time, setTime] = useState(new Date());
+export default function DigitalClock({ timeNow }) {
+  const [time, setTime] = useState(new Date(timeNow));
 
   useEffect(() => {
+    let intervalId;
     // Check if it's the first load
     if (!localStorage.getItem("pageLoaded")) {
       // Set a flag to indicate the page has been loaded
       localStorage.setItem("pageLoaded", "true");
-      // Refresh the page
-      location.reload();
+
+      intervalId = setTimeout(function () {
+        location.reload();
+      }, 3000);
     }
+
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   useEffect(() => {
