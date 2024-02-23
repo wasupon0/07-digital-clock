@@ -24,10 +24,52 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+
+
+/*   background-image: url(../public/dark-fabric.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin:0; */
+
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+@font-face {
+  font-family: "my1Font";
+  font-style: normal;
+  font-weight: normal;
+  font-display: optional;
+
+  src: url('../public/fonts/RobotoMono-VariableFont_wght.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "my2Font";
+  font-style: normal;
+  font-weight: normal;
+  font-display: optional;
+  src: url('../public/fonts/Outfit-VariableFont_wght.woff2') format("woff2");
+}
+
+@font-face {
+  font-family: "my3Font";
+  font-style: normal;
+  font-weight: normal;
+  font-display: optional;
+  src: url('../public/fonts/Manrope-VariableFont_wght.woff2') format("woff2");
+}
+
+
+
+.text-biggest {
+  font-size: 22rem;
 }

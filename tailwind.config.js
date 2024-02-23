@@ -12,6 +12,11 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        my1Font: ["my1Font"], //fonts name define in /app/globals.css
+        my2Font: ["my2Font"],
+        my3Font: ["my3Font"],
+      },
     },
   },
   plugins: [],
