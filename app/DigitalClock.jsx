@@ -63,7 +63,7 @@ export default function DigitalClock() {
     <>
       <div>
         <span
-          className={`font-my1Font text-slate-200 font-black  tracking-tighter text-biggest`}
+          className={`font-my1Font text-slate-100 font-black  tracking-tight text-biggest`}
         >
           {formatTime()}
         </span>
